@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'User log in', type: :feature do
-
   let(:user) { create(:user) }
 
   scenario 'log in as a user' do
@@ -11,6 +10,6 @@ RSpec.feature 'User log in', type: :feature do
       fill_in 'user_password', with: user.password
     end
     click_button('Log in')
-  #TODO
+    # TODO
   end
 end
