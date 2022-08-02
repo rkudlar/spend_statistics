@@ -1,0 +1,25 @@
+<p class="is-size-4">Витрати:
+  <%= @records.map { |record| record.cost if can? :read, record }.compact.sum %>
+</p>
+<table class="table is-striped is-hoverable is-fullwidth">
+  <thead>
+  <tr>
+    <th>Категорія</th>
+    <th>Витрата</th>
+    <th>Дата</th>
+    <th>Дії</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @records.order('date DESC').order('created_at DESC').each do |record| %>
+    <% if can? :read, record %>
+      <tr>
+        <td><%= record.category_name %></td>
+        <td><%= record.cost %></td>
+        <td><%= record.date %></td>
+        <td><%= link_to 'Редагувати', edit_record_path(record) %> | <%= link_to 'Видалити', record_path(record), method: :delete %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

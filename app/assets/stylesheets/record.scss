@@ -1,0 +1,20 @@
+.page-edit{
+  div{
+    display: flex;
+    input{
+      display: block;
+      background-color: #fff;
+    }
+    textarea{
+      min-width: 0%;
+    }
+    select{
+      padding-right: 2.5em;
+      cursor: pointer;
+      display: block;
+      font-size: 1em;
+      max-width: 100%;
+      background-color: #fff;
+    }
+  }
+}
