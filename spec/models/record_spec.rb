@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Record, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:record) { create(:record) }
+
+  it { expect(record).to be_valid }
+
+  it { should validate_presence_of(:cost) }
+  it { should validate_presence_of(:date) }
 end

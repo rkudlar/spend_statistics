@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2022_07_30_202942) do
     t.float "cost", null: false
     t.date "date", null: false
     t.integer "category_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

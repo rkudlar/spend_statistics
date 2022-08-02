@@ -10,6 +10,6 @@ RSpec.feature 'User log in', type: :feature do
       fill_in 'user_password', with: user.password
     end
     click_button('Log in')
-    # TODO
+    expect(page).to have_content user.email
   end
 end

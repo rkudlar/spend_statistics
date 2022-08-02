@@ -1,0 +1,29 @@
+<div class="columns is-justify-content-center">
+  <div class="column is-6-tablet is-5-desktop is-4-widescreen is-3-fullh">
+    <div class="p-5 page-edit">
+      <%= form_for :record, url: record_path, method: :patch do |f| %>
+        <div class="py-3">
+          <p class="is-size-4">Категорія:&nbsp;</p>
+          <div class="select">
+            <%= f.collection_select :category_id, Category.all, :id, :name %>
+          </div>
+        </div>
+
+        <div class="py-3">
+          <p class="is-size-4">Витрата:&nbsp;</p>
+          <div class="field">
+            <%= f.number_field :cost, class: 'input' %>
+          </div>
+        </div>
+
+        <div class="py-3">
+          <p class="is-size-4">Дата:&nbsp;</p>
+          <div class="select">
+            <%= f.date_select :date %>
+          </div>
+        </div>
+        <%= f.submit value: "Зберегти", class: 'button' %>
+      <% end %>
+    </div>
+  </div>
+</div>

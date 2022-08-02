@@ -4,6 +4,7 @@ class CreateRecords < ActiveRecord::Migration[6.1]
       t.float :cost, null: false
       t.date :date, null: false
       t.integer :category_id, null: false
+      t.integer :user_id, null: false
       t.timestamps
     end
   end
